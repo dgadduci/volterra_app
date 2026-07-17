@@ -1,0 +1,6 @@
+PROVIDER="opencode:minimax/MiniMax-M3"
+FILE_PATTERNS="*"
+EXCLUDE_PATTERNS=".config/opencode/*,.config/opencode/**,.atl/*,.atl/**"
+RULES_FILE="AGENTS.md"
+STRICT_MODE="false"
+TIMEOUT="600"

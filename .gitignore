@@ -32,3 +32,5 @@ env/
 # Archivos temporales
 *.tmp
 *.swp
+# Gentle AI skill registry generado
+.atl/
