@@ -78,58 +78,39 @@ Para cada funcionalidad o cambio relevante:
 16. Actualizar la documentación.
 17. Realizar el commit.
 
-## Especificaciones y OpenSpec
+## Almacenamiento de artefactos SDD
 
-Cada funcionalidad debe contar con una especificación escrita antes de ser implementada.
+El almacén de artefactos se determina en el preflight de cada sesión de Gentle AI.
 
-Este proyecto utiliza OpenSpec, instalado y gestionado por Gentle AI, como sistema
-principal para Specification-Driven Development.
+Para este proyecto se utiliza actualmente Engram como almacén principal de los
+artefactos operativos del proceso SDD.
 
-La documentación se divide en:
+Engram conserva:
 
-- `docs/product/`: visión, glosario y reglas generales del dominio;
-- `docs/architecture/`: arquitectura estable y decisiones técnicas;
-- `openspec/specs/`: especificaciones vigentes del sistema;
-- `openspec/changes/`: cambios propuestos o en desarrollo;
-- `openspec/changes/archive/`: cambios terminados y archivados.
-
-Para cada cambio funcional, Gentle AI podrá generar dentro de
-`openspec/changes/<nombre-del-cambio>/`:
-
-- propuesta;
-- especificaciones incrementales;
-- diseño;
+- propuestas;
+- especificaciones;
+- diseños;
 - tareas;
-- evidencia de verificación.
+- progreso de implementación;
+- informes de verificación;
+- estado de los cambios.
 
-Las especificaciones deben incluir, cuando corresponda:
+Git continúa siendo la fuente de verdad para:
 
-- problema que se intenta resolver;
-- objetivo;
-- alcance;
-- comportamiento esperado;
-- reglas de negocio;
-- entradas;
-- salidas;
-- errores esperados;
-- casos límite;
-- criterios de aceptación;
-- elementos expresamente fuera de alcance.
+- código de la aplicación;
+- tests;
+- migraciones;
+- configuración versionada;
+- documentación estable del producto;
+- reglas generales del negocio;
+- decisiones arquitectónicas relevantes.
 
-Una vez completado y aprobado un cambio, sus especificaciones relevantes deben
-integrarse en `openspec/specs/` y el cambio debe archivarse.
+Las decisiones que deban permanecer accesibles independientemente de Engram deben
+documentarse también en `docs/`.
 
-No se deben mantener dos especificaciones contradictorias sobre la misma funcionalidad.
-
-Cuando exista una contradicción, ambigüedad o regla de negocio importante sin definir,
-la implementación debe detenerse hasta resolverla.
-
-No se debe implementar una funcionalidad si:
-
-- la especificación es contradictoria;
-- existen reglas de negocio importantes sin definir;
-- el alcance no está claro;
-- los criterios de aceptación no pueden verificarse.
+No se deben eliminar ni modificar los componentes de OpenSpec instalados por Gentle AI,
+ya que forman parte de sus capacidades generales, aunque el almacén seleccionado para
+la sesión sea Engram.
 
 ## Revisión automática con GGA
 
